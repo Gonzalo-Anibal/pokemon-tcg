@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "a6f2c2dc-7b7f-4b64-bef5-6b913c3c37d3",
+		"name": "Sets API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Sets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/sets",
+					"host": ["{{baseUrl}}"],
+					"path": ["sets"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Set by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/sets/:id",
+					"host": ["{{baseUrl}}"],
+					"path": ["sets", ":id"],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Set",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"base1\",\n    \"name\": \"Base Set\",\n    \"series\": \"Base\",\n    \"printedTotal\": 102,\n    \"total\": 102,\n    \"ptcgoCode\": \"BS\",\n    \"releaseDate\": \"1999-01-09\",\n    \"updatedAt\": \"2025-02-21T12:00:00.000Z\",\n    \"symbolUrl\": \"https://example.com/symbol.png\",\n    \"logoUrl\": \"https://example.com/logo.png\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/sets",
+					"host": ["{{baseUrl}}"],
+					"path": ["sets"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Set",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Updated Base Set\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/sets/:id",
+					"host": ["{{baseUrl}}"],
+					"path": ["sets", ":id"],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Set",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/sets/:id",
+					"host": ["{{baseUrl}}"],
+					"path": ["sets", ":id"],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

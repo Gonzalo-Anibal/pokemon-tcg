@@ -1,0 +1,70 @@
+{
+    "info": {
+        "_postman_id": "6bca28a0-6a5b-4df5-ae64-3c014e21fbd7",
+        "name": "Markets API (Nested)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get all markets for a card",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/cards/some-card-id/markets"
+            }
+        },
+        {
+            "name": "Get single market for a card",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/cards/some-card-id/markets/1"
+            }
+        },
+        {
+            "name": "Create new market for a card",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"url\": \"https://example.com\",\n    \"updatedAt\": \"2025-02-21\",\n    \"market\": \"TCGPlayer\"\n}"
+                },
+                "url": "{{baseUrl}}/cards/some-card-id/markets"
+            }
+        },
+        {
+            "name": "Update market for a card",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"url\": \"https://new-example.com\",\n    \"market\": \"CardMarket\"\n}"
+                },
+                "url": "{{baseUrl}}/cards/some-card-id/markets/1"
+            }
+        },
+        {
+            "name": "Delete market for a card",
+            "request": {
+                "method": "DELETE",
+                "url": "{{baseUrl}}/cards/some-card-id/markets/1"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000"
+        }
+    ]
+}

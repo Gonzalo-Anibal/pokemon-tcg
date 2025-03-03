@@ -1,0 +1,101 @@
+{
+    "info": {
+        "name": "Cards API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Card",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/cards",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["cards"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": \"card-001\",\n    \"name\": \"Pikachu\",\n    \"supertype\": \"Pokémon\",\n    \"subtypes\": [\"Basic\"],\n    \"types\": [\"Electric\"],\n    \"set_id\": \"base-set\",\n    \"number\": \"25\",\n    \"rarity\": \"Common\",\n    \"images\": [\n        {\n            \"url\": \"https://example.com/front.jpg\",\n            \"type\": \"front\"\n        },\n        {\n            \"url\": \"https://example.com/back.jpg\",\n            \"type\": \"back\"\n        }\n    ]\n}"
+                }
+            }
+        },
+        {
+            "name": "Get All Cards",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/cards",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["cards"]
+                }
+            }
+        },
+        {
+            "name": "Get Card by ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/cards/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["cards", ":id"],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "card-001"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Card",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/cards/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["cards", ":id"],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "card-001"
+                        }
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Raichu\",\n    \"images\": [\n        {\n            \"url\": \"https://example.com/raichu-front.jpg\",\n            \"type\": \"front\"\n        }\n    ]\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete Card",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "{{baseUrl}}/cards/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["cards", ":id"],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "card-001"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
