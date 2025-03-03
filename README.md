@@ -15,6 +15,20 @@ pokemon-tcg/
 └── docker-compose.yml       # Configuración conjunta
 ```
 
+## Base de Datos
+
+Pueden levantar la BD Postgres con el siguiente comando por si tienen algun inconveniente:
+
+``` bash
+docker run -d \    
+  --name postgres_container \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=123456 \
+  -e POSTGRES_DB=postgres \
+  -p 5432:5432 \
+  postgres
+```
+
 ## Primeros pasos
 
 1. Clonar el repositorio:
