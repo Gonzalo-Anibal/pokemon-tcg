@@ -19,7 +19,7 @@ pokemon-tcg/
 
 1. Clonar el repositorio:
     ```bash
-    git clone <REPO_URL>
+    git clone https://github.com/Gonzalo-Anibal/pokemon-tcg
     cd pokemon-tcg
     ```
 
